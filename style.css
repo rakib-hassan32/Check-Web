@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -22,6 +24,9 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
 }
+
+
+        /* header design start */
 
 .header {
     position:fixed;
@@ -72,7 +77,7 @@ body {
         /* header design end */
 
 
-        /* home section design */
+        /* home section design start */
 
 section {
     min-height: 100vh;
@@ -248,6 +253,9 @@ section {
 
         /* home section design end */
 
+
+        /* about section design start */
+
 .about {
     display: flex;
     justify-content: center;
@@ -265,7 +273,7 @@ section {
 }
 
 span {
-    color: white;
+    color: var(--main-color);
 }
 
 .about-img {
@@ -318,9 +326,11 @@ span {
     background: var(--second-bg-color);
 }
 
+        /* about section design end */
 
 
-/* education section design start */
+
+        /* education section design start */
 
 .education {
     display: flex;
@@ -509,55 +519,145 @@ span {
 }
 
         /* skills section design end */
+        
+
+        /* contact section design start */
 
 
-
-/* KEYFRAMES ANIMATION */
-
-@keyframes homeBgText {
-    0%,
-    10%,
-    100% {
-        background-position: -33rem 0;
-    }
-
-    65%,
-    85% {
-        background-position: 0 0;
-    }
+.contact {
+            min-height: auto;
+            padding-bottom: 7rem;
+        }
+.contact h2 {
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.contact form {
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+.contact form .input-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.contact form .input-box .input-field {
+    position: relative;
+    width: 49%;
+    margin: .8rem 0;
+}
+.contact form .input-box .input-field input,
+.contact form .textarea-field textarea {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+}
+.contact form .input-box .input-field input::placeholder,
+.contact form .textarea-field textarea::placeholder {
+    color: var(--text-color);
+}
+        
+        
+.contact form .focus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    border-radius: .6rem;
+    z-index: -1;
+    transition: .5s;
+}
+        
+        
+.contact form .input-box .input-field input:focus~.focus,
+.contact form .input-box .input-field input:valid~.focus,
+.contact form .textarea-field textarea:focus~.focus,
+.contact form .textarea-field textarea:valid~.focus {
+    width: 100%;
+}
+.contact form .textarea-field {
+    position: relative;
+    margin: .8rem 0 2.7rem;
+    display: flex;
+}
+.contact form .textarea-field textarea {
+    resize: none;
+}
+.contact form .btn-box.btns .btn {
+    cursor: pointer;
 }
 
-@keyframes homeCursorText {
-    0%,
-    10%,
-    100% {
-        width: 0;
-    }
+        /* contact section design end */
 
-    65%,
-    78%,
-    85% {
-        width: 100%;
-        opacity: 1;
-    }
 
-    75%,
-    81%{
-        opacity: 0;
-    }
+
+        /* footer design start */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color);
 }
 
-@keyframes aboutSpinner {
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
+.footer-text,
+.footer-iconTop {
+    position: relative;
 }
 
-@keyframes showRight {
-    100% {
-        width: 0;
-    }
+.footer-text p {
+    font-size: 1.6rem;
 }
+.footer-iconTop a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    z-index: 1;
+    overflow: hidden;
+}
+.footer-iconTop a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background:var(--second-bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+.footer-iconTop a:hover::before {
+    width: 100%;
+}
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--bg-color);
+    transition: .5s;
+}
+.footer-iconTop a:hover i {
+    color: var(--main-color);
+}
+
+
+        /* footer design end */
+
 
 
 /* ANIMATION RELOAD AND SCROLL */
@@ -607,6 +707,8 @@ section:nth-child(odd) .animate.scroll,
     transition-delay: calc(.3s * var(--i));
     width: 0;
 }
+
+
 
 
 /* BREAKPOINTS */
@@ -764,136 +866,49 @@ section:nth-child(odd) .animate.scroll,
 
 }
 
+/* KEYFRAMES ANIMATION */
 
+@keyframes homeBgText {
+    0%,
+    10%,
+    100% {
+        background-position: -33rem 0;
+    }
 
-/* footer design start */
-
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 2rem 9%;
-    background: var(--second-bg-color);
+    65%,
+    85% {
+        background-position: 0 0;
+    }
 }
 
-.footer-text,
-.footer-iconTop {
-    position: relative;
+@keyframes homeCursorText {
+    0%,
+    10%,
+    100% {
+        width: 0;
+    }
+
+    65%,
+    78%,
+    85% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    75%,
+    81%{
+        opacity: 0;
+    }
 }
 
-.footer-text p {
-    font-size: 1.6rem;
-}
-.footer-iconTop a {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.8rem;
-    background: var(--main-color);
-    border: .2rem solid var(--main-color);
-    border-radius: .6rem;
-    z-index: 1;
-    overflow: hidden;
-}
-.footer-iconTop a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background:var(--second-bg-color);
-    z-index: -1;
-    transition: .5s;
-}
-.footer-iconTop a:hover::before {
-    width: 100%;
-}
-.footer-iconTop a i {
-    font-size: 2.4rem;
-    color: var(--bg-color);
-    transition: .5s;
-}
-.footer-iconTop a:hover i {
-    color: var(--main-color);
+@keyframes aboutSpinner {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
-
-        /* footer design end */
-
-        .contact {
-            min-height: auto;
-            padding-bottom: 7rem;
-        }
-        .contact form {
-            max-width: 70rem;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .contact form .input-box {
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        .contact form .input-box .input-field {
-            position: relative;
-            width: 49%;
-            margin: .8rem 0;
-        }
-        .contact form .input-box .input-field input,
-        .contact form .textarea-field textarea {
-            width: 100%;
-            height: 100%;
-            padding: 1.5rem;
-            font-size: 1.6rem;
-            color: var(--text-color);
-            background: transparent;
-            border-radius: .6rem;
-            border: .2rem solid var(--main-color);
-        }
-        .contact form .input-box .input-field input::placeholder,
-        .contact form .textarea-field textarea::placeholder {
-            color: var(--text-color);
-        }
-        
-        
-        .contact form .focus {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: var(--second-bg-color);
-            border-radius: .6rem;
-            z-index: -1;
-            transition: .5s;
-        }
-        
-        
-        .contact form .input-box .input-field input:focus~.focus,
-        .contact form .input-box .input-field input:valid~.focus,
-        .contact form .textarea-field textarea:focus~.focus,
-        .contact form .textarea-field textarea:valid~.focus {
-            width: 100%;
-        }
-        
-        
-        
-        .contact form .textarea-field {
-            position: relative;
-            margin: .8rem 0 2.7rem;
-            display: flex;
-        }
-        .contact form .textarea-field textarea {
-            resize: none;
-        }
-        .contact form .btn-box.btns .btn {
-            cursor: pointer;
-        }
-
-        span {
-            color: var(--main-color);
-        }
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
